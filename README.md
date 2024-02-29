@@ -1,6 +1,7 @@
 # RockPaperScissor
 
 -create rule for what beats what
+
 -computer outputs random rock paper or scissor
 -player inputs rock paper or scissor, make it case insensitive
 -apply the rule and take computer input and player input 
