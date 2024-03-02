@@ -8,12 +8,12 @@
   <script>
     // Your JavaScript goes here!
 
-//parseInt takes string and returns integer, used for scoring
+//parseInt takes string and returns integer, is used for scoring
 let userScore = parseInt(0);
 let computerScore = parseInt(0);
 
-//first gets array of choices available, then randomizes the choice
-//therefore making each string = to a number
+//first gets array of choices available, assigns each string a number
+//for math to randomize the output numbers(strings)
 function getComputerChoice () {
     const choices = ["rock", "paper", "scissor"]
     let randomizeChoice = Math.floor(Math.random() * choices.length)
@@ -30,9 +30,9 @@ function getComputerChoice () {
 //console.log(getComputerChoice());
 
 
-//function that first makes all playerselection become lowercase
-//then create rules that outputs strings depending on what beats what
-//if computer win add increment of string to (computerScore), vise versa
+//function makes all input lowercase for uniform output
+//then create rules depending on what beats what,
+//which adds score to each result for keeping track for next function
 function playRound(playerSelection, computerSelection) {
   if (playerSelection.toLowerCase() === 'rock') {
     if(computerSelection === 'paper'){
@@ -73,10 +73,8 @@ function playRound(playerSelection, computerSelection) {
 
 
 
-//loop the function above, initial is 0, runs 5 times, increment each time loop is run
-//firstly let player pick a move, then gets
-//the randomized computerchoice function and logs the 
-//playround function with user/computer scores
+//looping the function 5 times, including prompting to get a score
+//from each loops
 for (let i = 0; i < 5 ; i++){
   let playerSelection = prompt("pick a rock, paper or scissor");
   const computerSelection = getComputerChoice();
@@ -86,7 +84,7 @@ for (let i = 0; i < 5 ; i++){
 }
 
 
-//function for a final result taking the total user score and computer score
+//function totals all scores for final result after loop
 function result(){
   if (userScore > computerScore){
   return "WINNER";
@@ -96,7 +94,6 @@ function result(){
     return "TIE";
   }
 }
-
 console.log(result());
 
 
